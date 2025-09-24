@@ -1,0 +1,79 @@
+:root {
+    --color-text-titel: #0F172A;
+    --color-text-titel-logo: #0a7cec; 
+    --text-color-main: #334155;
+    --btn-color: #22C55E;
+    --btn-cat: #3B82F6;
+    --bg-color-: #F8FAFC;
+
+}
+
+/*Home*/
+
+.Home {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  
+
+    padding: 20px;
+}
+
+.HomeTop {
+    width: 100%;
+  
+
+}
+
+.HTS1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.BtnSerchHome {
+    color: whitesmoke !important;
+    background-color: var(--btn-color) !important;
+    border-radius: 7px !important;
+    font-weight: 900 !important;
+    transition: all 0.5s ease-in-out !important;
+}
+
+.BtnSerchHome:hover {
+    margin: 0px 10px;
+    box-shadow: 0px 0px 20px #076d57;
+}
+
+.mb-8 {
+    color: var(--text-color-main) !important;
+    font-size: 45px;
+    margin-top: 0px;
+}
+
+.Form {
+    background-color: var(--bg-color-) !important;
+    border-radius: 18px !important;
+    transition: 0.5s ease-in-out !important;
+
+}
+
+.Form:hover {
+      box-shadow: 0px 0px 30px var(--text-color-main);
+    transform: scale(1.1) !important;
+}
+.MainLogoHome{
+    min-width:240px ;
+     max-width: 300px;
+     cursor: pointer;
+    filter: drop-shadow(0 -6mm 40mm rgb(1, 29, 37));
+   transform: scale(1.5) !important;
+}
+.MainLogoHome:hover{
+    border-image:  0px 0px 10px red  ;
+}
