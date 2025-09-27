@@ -1,8 +1,7 @@
-import Card from '@mui/joy/Card';
+
 import CardContent from '@mui/joy/CardContent';
-import Typography from '@mui/joy/Typography';
 import CardMedia from '@mui/material/CardMedia';
-import Logo from "../Photo/books.png"
+
 export default function CardVariants({Src , Titel}) {
     return (
    

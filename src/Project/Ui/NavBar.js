@@ -1,11 +1,12 @@
 import "./Styles/UI.css";
 import MainLogo from "../Photo/Main-logo-no-text.png"
+import { Link } from "react-router-dom"
 
-//-----------Mui __---------------------------
-import Typography from '@mui/material';
+//-----------Mui __---------------------------';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
-import MenuIcon from '@mui/icons-material/Menu';
+
 //-----------Mui __---------------------------
 export default function NavBar(params) {
     return (
@@ -31,14 +32,27 @@ export default function NavBar(params) {
                   }}
                  
                 >
-                          <Button className="NavButton">Home</Button>
-                           <Button className="NavButton">Books</Button>
-                          <Button className="NavButton">Noveles</Button>
+                          <Button className="NavButton">
+                             <Link to="/" >
+                                   Home
+                            </Link>
+                            </Button>
+
+                           <Button className="NavButton">
+                              <Link  to="Books">
+                                  Books
+                             </Link>
+                            </Button>
+                          <Button  className="NavButton"> 
+                            <Link  to="Noveles">
+                                   Noveles
+                             </Link>
+                          </Button>
                            
               </ButtonGroup>
             </div>
             <div className="Menu">
-               <MenuIcon/>
+               <Button   className="BtnNavbarAdd" variant="contained"  startIcon={<LocalLibraryIcon   />}> new </Button>
             </div>
           </div>
         </div>

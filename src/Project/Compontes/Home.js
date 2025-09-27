@@ -3,6 +3,7 @@ import CardVariants from "../Ui/CardCategory"
 import MainLogo from "../Photo/Main-logo-no-text.png"
 import NovelesLogo from "../Photo/books.png"
 import BookLogo from "../Photo/Noveles.png"
+import { Link } from "react-router-dom"
 
 /*-----animation---- */
 import BlurText from "../Animation/Text/BluerText";
@@ -14,9 +15,10 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
+import Button from "@mui/material/Button"
+
 /*--------------------------MUI-------------------------------- */
 
 
@@ -32,14 +34,14 @@ const handleAnimationComplete = () => {
 /*-----animation---- */
     return (
       <AnimatedContent
-          distance={150}
-          direction=""
+          distance={50}
+          direction
           reverse={true}
           duration={1.2}
           ease="bounce.out"
           initialOpacity={0.2}
           animateOpacity
-          scale={1.5}
+          scale={1.2}
           threshold={0.2}
           delay={0}
         >
@@ -93,7 +95,7 @@ const handleAnimationComplete = () => {
                    <div className="HTS2">
                      {/*----------------Book & Noveles---------- */}
                      <div className="Categoures">
-                       <div className="Books HomeCard">
+                       <div className="Books  Noveles HomeCard">
                          <Container maxWidth="sm" style={{
                         
                             display:"grid" , 
@@ -104,13 +106,36 @@ const handleAnimationComplete = () => {
                             padding:"30px" , 
                             marginTop:"5px"
                          }}>
+                     
+                           <Link   to={"Books"}>
+                                 <CardVariants     Src={BookLogo} Titel={"Books"} />
+                           </Link>  
 
-                           <CardVariants     Src={BookLogo} Titel={"Books"} />
-                           <CardVariants  Src={NovelesLogo} Titel={"Noveles"}/>
-                           </Container>
+                           <Link to="Noveles" >
+                                <CardVariants  Src={NovelesLogo} Titel={"Noveles"}/>
+                           </Link>
+
+                        </Container>
 
                        </div>
-                       <div className="Noveles  HomeCard"></div>
+                       <div className="NewBooks"  style={{
+                                   width:"100%",
+                                   display:"flex",
+                                   justifyContent:"center",
+                                   alignItems:"center",
+                                   margin:"20px"                 
+                                   }}>
+                       
+                          <Button variant="contained" 
+                           className="BtnAddNewBook" 
+                           startIcon ={<LocalLibraryIcon  style={{
+                       margin:"2px",
+                            fontSize:"30px"
+                           }}/>}
+                           > Add new Book
+                           </Button>
+                        
+                       </div>
                      </div>
                      {/*----------------Book & Noveles---------- */}
                    </div>
