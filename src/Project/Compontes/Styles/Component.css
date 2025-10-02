@@ -8,6 +8,7 @@
 
 }
 
+
 /*Home*/
 a {
     text-decoration: none !important;
@@ -15,7 +16,7 @@ a {
 
 .Home {
     width: 100%;
-    height: auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +54,7 @@ a {
     box-shadow: 0px 0px 20px #076d57;
 }
 
-.mb-8 {
+.Home .mb-8 {
     color: var(--text-color-main) !important;
     font-size: 45px;
     margin-top: 0px;
@@ -86,7 +87,7 @@ a {
 .BtnAddNewBook {
 
     height: 40px !important;
-    background-color:  #2b2a2a8c  !important;
+    background-color: #2b2a2a8c !important;
     font-weight: 800 !important;
     font-size: 19px !important;
     color: whitesmoke !important;
@@ -98,12 +99,12 @@ a {
 
 .BtnAddNewBook:hover {
     transform: scale(1.1) !important;
-    box-shadow:0px 0px 10px whitesmoke !important ;
+    box-shadow: 0px 0px 10px whitesmoke !important;
     background-color: #141313ad !important;
 }
 
 /*------error----*/
-.error{
+.error {
     width: 100%;
     height: 80vh;
     color: #0a7cec !important;
@@ -113,4 +114,156 @@ a {
     flex-direction: column;
     cursor: pointer;
 }
+
 /*------error----*/
+
+
+/*Books*/
+.Books {
+
+    height: 1fr;
+    width: 100%;
+    margin-top: 70px !important;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.BooksTop {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+}
+
+.BooksTitel {
+    color: whitesmoke !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.SmallTitelBooks {
+    font-size: 15px !important;
+    font-weight: 900;
+    color: var(--color-text-titel) !important;
+}
+
+.Books .mb-8 {
+    color: var(--text-color-main) !important;
+    font-size: 50px !important;
+    font-weight: 800;
+}
+
+.BooksSerchSection {
+    width: 100% !important;
+}
+
+.BooksLogoHome {
+    min-width: 140px;
+    max-width: 180px;
+    cursor: rgb(54, 87, 121)r;
+    filter: drop-shadow(0 -6mm 40mm rgba(10, 61, 75, 0.5));
+    transform: scale(1.5) !important;
+}
+
+/*Books Body*/
+
+.BodyCover {
+    background-image: url("/src/Project/Photo/Main-logo-no-text.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50% !important;
+    width: 100%;
+}
+.BooksBody {
+    height: 100vh;
+    padding: 10px;
+    width: 100% !important;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    flex-direction: row;
+    gap: 30px;
+    box-shadow: 0px 15px 25px var(--text-color-main);
+    backdrop-filter: blur(9.5px);
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 20px;
+
+
+}
+
+
+.BooksShow {
+
+    flex: 7;
+   border-radius: 20px;
+
+}
+
+.TheBooksCard {
+    flex: 1;
+    background-color: #0a7cec;
+}
+
+.Filter {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+   
+}
+.FilterOptions{
+ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row !important;
+    gap: 30px;
+}
+
+/*Books Menu*/
+.BooksMenu{
+    flex: 1.5;
+    position: sticky;
+    top:100px;
+    margin-top: 60px;
+
+}
+.BooksMenusCo{
+    box-shadow: 0px 15px 25px var(--text-color-main);
+    backdrop-filter: blur(9.5px);
+   background-color: transparent !important;
+    border-radius: 15px;
+    padding: 5px 5px;
+ 
+}
+.BooksMenusCo ul{
+    list-style: none;
+   
+   & li{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background-color: whitesmoke !important;
+            border-radius: 9px;
+            margin-bottom: 10px;
+            padding: 10px;
+            color: var(--text-color-main) !important;
+            font-weight: 800;
+   }
+}
+.ListImge{
+    width: 20px !important;
+    transform: scale(1.2);
+}

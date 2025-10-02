@@ -17,8 +17,8 @@ export default function Foter(params) {
           width:"100%",
           display:"flex",
           justifyContent:"center" ,
-          background:"#c8cfcf",
-          padding:"10px"
+           position:"absolute",
+          zIndex:"5"
         }}>
         <div className="Foter">
                <div className="FoterLogo">

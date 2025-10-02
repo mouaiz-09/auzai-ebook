@@ -6,6 +6,7 @@ import Homer from './Project/Compontes/Home';
 import NavBar from './Project/Ui/NavBar';
 import Foter from './Project/Ui/Foter';
 import Error from "./Project/Compontes/Error"
+import Books from './Project/Compontes/Books';
 /*-------------Compontes------- */
 
 
@@ -15,23 +16,24 @@ return (
  <BrowserRouter>
   
 
-        <div className='App'>
-
+        <div >
                    <NavBar/>
+
 
 
                    {/*------------------Routers----------- */}
                        <Routes>
 
                            <Route  path='/'  element={< Homer/>}></Route>
-                           <Route path="/Books" element={<h1> this is books </h1>} />
+                           <Route path="/Books" element={<Books/>} />
                            <Route path="/Noveles" element={<h1> this is Noveles </h1>} />
                            <Route path='*' element={<Error/>} ></Route>
  
                        </Routes>
                    {/*------------------Routers----------- */}
-                 <Foter/>
+                   <Foter/>
          </div>
+                 
     
 
    

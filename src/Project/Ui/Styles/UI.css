@@ -12,6 +12,7 @@ a {
     text-decoration: none !important;
     color: var(--text-color-main) !important
 }
+
 a:hover {
     color: #064b4b !important;
 }
@@ -113,6 +114,8 @@ a:hover {
     padding: 5px 20px;
     background-color: #c8cfcf;
     color: var(--text-color-main);
+
+
 }
 
 .FoterImge {
@@ -127,3 +130,5 @@ a:hover {
 
 
 /*Foter*/
+
+/*Selctor*/
