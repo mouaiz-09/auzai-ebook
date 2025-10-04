@@ -211,7 +211,7 @@ a {
 
 .TheBooksCard {
     flex: 1;
-    background-color: #0a7cec;
+   
 }
 
 .Filter {
@@ -241,7 +241,7 @@ a {
 }
 .BooksMenusCo{
     box-shadow: 0px 15px 25px var(--text-color-main);
-    backdrop-filter: blur(9.5px);
+    backdrop-filter: blur(4.5px);
    background-color: transparent !important;
     border-radius: 15px;
     padding: 5px 5px;
@@ -266,4 +266,24 @@ a {
 .ListImge{
     width: 20px !important;
     transform: scale(1.2);
+}
+
+
+/*Books Show Card*/
+.TheBooksCard{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll !important;
+    padding: 10px;
+}
+.TheBooksCardContent{
+    width: 100% !important;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: min-content(1);
+    gap: 10px ;
+    row-gap: 30px;
 }

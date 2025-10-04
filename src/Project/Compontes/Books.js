@@ -1,6 +1,6 @@
 import "./Styles/Component.css";
 import Selecter from "../Ui/Selecter";
-
+import CardShow from "../Ui/CardShow";
 
 /*-----animation---- */
 import BlurText from "../Animation/Text/BluerText";
@@ -96,10 +96,12 @@ export default function Books() {
             </div>
           </div>
 
-          <hr style={{ width: "100%", marginTop: "15px" }} />
-          <div className="BodyCover">
-            <div className="BooksBody">
-              <div className="BooksShow">
+          <hr
+            style={{ width: "100%", marginTop: "15px", overflow: "hidden" }}
+          />
+          <div className="BodyCover" style={{ height: "100%" }}>
+            <div className="BooksBody" style={{ height: "100%" }}>
+              <div className="BooksShow" sstyle={{ height: "auto" }}>
                 <div className="Filter">
                   <div className="FilterOptions">
                     <Selecter Options={["ar ", "en", "fr"]} text="Lange" />
@@ -115,6 +117,7 @@ export default function Books() {
                     </Button>
                   </div>
                 </div>
+
                 <Divider
                   orientation="horizontal"
                   style={{
@@ -123,7 +126,34 @@ export default function Books() {
                 >
                   Filters
                 </Divider>
-                <div className="TheBooksCard"> </div>
+                <div className="TheBooksCard">
+                  <div className="TheBooksCardContent">
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                    <CardShow />
+                  </div>
+                </div>
               </div>
 
               <div className="BooksMenu">
