@@ -47,7 +47,7 @@ export default function Homer(params) {
           <div className="HomeTop">
             <div className="HTS1">
               {/*-------------Logo section------- */}
-              <div style={{ marginBottom: "40px" }}>
+              <div style={{ marginBottom: "40px"  }}>
                 <img className="MainLogoHome" src={MainLogo} alt="logo "></img>
               </div>
               {/*-------------Logo section------- */}

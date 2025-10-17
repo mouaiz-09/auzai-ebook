@@ -121,6 +121,9 @@ a {
     .Home .mb-8{
         font-size: x-large;
     }
+    .MainLogoHome{
+        width: 100px !important;
+    }
 }
 
 
@@ -361,7 +364,7 @@ a {
 .TitelAnimation{
 color: var(--text-color-main) !important;
     font-weight: 900;
-    margin-top: 30px;
+    margin-top: 30px !important;
     transition: 0.5s ease-in-out;
     
 }
