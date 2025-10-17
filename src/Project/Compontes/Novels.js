@@ -16,11 +16,32 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 import Divider from "@mui/joy/Divider";
+import { red } from "@mui/material/colors";
 
 /*--------------------------MUI-------------------------------- */
 
-export default function Noveles() {
-  document.title="Novoles |Book_Dz"
+export default function Books() {
+  document.title = "ßooks Section";
+  console.log(document.images);
+
+  const images = document.querySelectorAll("img");
+
+  // Loop through each image and add the attribute
+  images.forEach((img) => {
+    img.setAttribute("loading", "lazy");
+  });
+
+  const Categoures = [
+    "Islamic",
+    "sciences",
+    "History",
+    "Language",
+    "Human development",
+    "Technology",
+  ];
+
+  const CategouresShow = Categoures.map((C) => {});
+
   return (
     <>
       <AnimatedContent
@@ -51,7 +72,7 @@ export default function Noveles() {
             <div className="BooksTitel">
               {/*-----Titel Animation ----------*/}
               <BlurText
-                text="Noveles  Section"
+                text="Noveles Section"
                 delay={50}
                 animateBy="words"
                 direction="top"
@@ -83,7 +104,7 @@ export default function Noveles() {
                 <InputBase
                   className="Forms"
                   sx={{ ml: 1, flex: 1, height: "50px" }}
-                  placeholder="Search Noveles.... "
+                  placeholder="Search ßooks.... "
                   inputProps={{ "aria-label": "search " }}
                 />
 
@@ -104,9 +125,19 @@ export default function Noveles() {
           <hr
             style={{ width: "100%", marginTop: "15px", overflow: "hidden" }}
           />
-          <div className="BodyCover" style={{ height: "100%" }}>
-            <div className="BooksBody" style={{ height: "100%" }}>
-              <div className="BooksShow" sstyle={{ height: "auto" }}>
+          <div className="BodyCover" style={{ height: "100%", width: "100%" }}>
+            <div
+              className="BooksBody"
+              style={{ height: "100%", width: "100%" }}
+            >
+              <div
+                className="BooksShow"
+                style={{ height: "100%", width: "100%" }}
+              >
+                <Divider orientation="horizontal" style={{ marginTop: "5px" }}>
+                  {" "}
+                  Filters
+                </Divider>
                 <div className="Filter">
                   <div className="FilterOptions">
                     <Selecter Options={["ar ", "en", "fr"]} text="Lange" />
@@ -126,14 +157,18 @@ export default function Noveles() {
                 <Divider
                   orientation="horizontal"
                   style={{
-                    history: "30px",
+                    marginTop: "5px",
                   }}
                 >
-                  Filters
+                  All ßooks
                 </Divider>
                 <div className="TheBooksCard">
                   <div className="TheBooksCardContent">
-                    <CardShow />
+                    <CardShow
+                      Name="the prince"
+                      auther="mycafile"
+                      src="https://www.noor-book.com/publice/covers_cache_webp/2/6/b/8/628dd2af4d6b8931be3c95aedc4e5ed9.png.webp"
+                    />
                     <CardShow />
                     <CardShow Name="Dz" />
                     <CardShow />
@@ -162,8 +197,39 @@ export default function Noveles() {
               </div>
 
               <div className="BooksMenu">
+                <Divider orientation="horizontal">Categoures</Divider>
                 <div className="BooksMenusCo">
                   <ul>
+                    <li>
+                      {/*icon */}
+                      <img
+                        alt="islamic"
+                        className="ListImge"
+                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
+                      />
+                      {/*Name */}
+                      <p> Islamic</p>
+                    </li>
+                    <li>
+                      {/*icon */}
+                      <img
+                        alt="islamic"
+                        className="ListImge"
+                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
+                      />
+                      {/*Name */}
+                      <p> Islamic</p>
+                    </li>
+                    <li>
+                      {/*icon */}
+                      <img
+                        alt="islamic"
+                        className="ListImge"
+                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
+                      />
+                      {/*Name */}
+                      <p> Islamic</p>
+                    </li>
                     <li>
                       {/*icon */}
                       <img
