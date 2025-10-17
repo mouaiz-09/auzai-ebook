@@ -3,6 +3,7 @@ import FuzzyText from '../Animation/Text/Fuzzy';
 import "./Styles/Component.css"
 import { Link } from 'react-router-dom';
 export default function Error(params) {
+  document.title="404 | Book_Dz"
     return(
         <div className="error">
           

@@ -24,6 +24,7 @@ import Button from "@mui/material/Button";
 import { ScroolTop } from "../Ui/NavBar";
 
 export default function Homer(params) {
+  document.title="Home |Book_Dz"
   /*-----animation---- */
   const handleAnimationComplete = () => {
     console.log("Animation completed!");

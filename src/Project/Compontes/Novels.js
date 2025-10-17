@@ -20,6 +20,7 @@ import Divider from "@mui/joy/Divider";
 /*--------------------------MUI-------------------------------- */
 
 export default function Noveles() {
+  document.title="Novoles |Book_Dz"
   return (
     <>
       <AnimatedContent

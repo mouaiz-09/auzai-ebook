@@ -15,6 +15,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { Link } from "react-router-dom";
 
 export default function About(params) {
+  document.title ="About-us |Book_Dz"
   return (
     <>
       <AnimatedContent
