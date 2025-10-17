@@ -1,6 +1,7 @@
 import "./Styles/Component.css";
 import Selecter from "../Ui/Selecter";
 import CardShow from "../Ui/CardShow";
+import palestine from "../Photo/palestine.gif";
 
 /*-----animation---- */
 import BlurText from "../Animation/Text/BluerText";
@@ -15,10 +16,35 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 import Divider from "@mui/joy/Divider";
+import { red } from "@mui/material/colors";
 
 /*--------------------------MUI-------------------------------- */
 
 export default function Books() {
+  document.title = "ßooks Section";
+  console.log(document.images);
+
+  const images = document.querySelectorAll("img");
+
+  // Loop through each image and add the attribute
+  images.forEach((img) => {
+    img.setAttribute("loading", "lazy");
+  });
+
+
+  const Categoures = [
+    "Islamic",
+    "sciences",
+    "History",
+    "Language",
+    "Human development",
+    "Technology",
+  ];
+
+  const CategouresShow = Categoures.map((C)=>{
+    
+  })
+
   return (
     <>
       <AnimatedContent
@@ -35,17 +61,21 @@ export default function Books() {
       >
         <Container maxWidth="lg" className="Books">
           <div className="BooksTop">
-            {/*-------------Logo section------- }
-                      --- ToDo : maybe add this sction--
-                     <div style={{marginBottom:"10px"}}>
-                             < img   className="BooksLogoHome" src={MainLogo} alt="logo " />
-                     </div>
-                  {-------------Logo section------- */}
+            {/*-------------Logo section-------*/}
 
+            <div style={{ marginBottom: "10px" }}>
+              <img
+                className="BooksLogoHome"
+                width={"10px"}
+                src={palestine}
+                alt="logo "
+              />
+            </div>
+            {/*-------------Logo section------- */}
             <div className="BooksTitel">
               {/*-----Titel Animation ----------*/}
               <BlurText
-                text="Books Section"
+                text="ßooks Section"
                 delay={50}
                 animateBy="words"
                 direction="top"
@@ -62,7 +92,6 @@ export default function Books() {
 
               {/*-----Titel Animation ----------*/}
             </div>
-
             <div className="BooksSerchSection">
               {/* -------------Inputs Sction--- */}
               <Paper
@@ -78,7 +107,7 @@ export default function Books() {
                 <InputBase
                   className="Forms"
                   sx={{ ml: 1, flex: 1, height: "50px" }}
-                  placeholder="Search Books.... "
+                  placeholder="Search ßooks.... "
                   inputProps={{ "aria-label": "search " }}
                 />
 
@@ -99,9 +128,19 @@ export default function Books() {
           <hr
             style={{ width: "100%", marginTop: "15px", overflow: "hidden" }}
           />
-          <div className="BodyCover" style={{ height: "100%" }}>
-            <div className="BooksBody" style={{ height: "100%" }}>
-              <div className="BooksShow" sstyle={{ height: "auto" }}>
+          <div className="BodyCover" style={{ height: "100%", width: "100%" }}>
+            <div
+              className="BooksBody"
+              style={{ height: "100%", width: "100%" }}
+            >
+              <div
+                className="BooksShow"
+                style={{ height: "100%", width: "100%" }}
+              >
+                <Divider orientation="horizontal" style={{ marginTop: "5px" }}>
+                  {" "}
+                  Filters
+                </Divider>
                 <div className="Filter">
                   <div className="FilterOptions">
                     <Selecter Options={["ar ", "en", "fr"]} text="Lange" />
@@ -121,16 +160,20 @@ export default function Books() {
                 <Divider
                   orientation="horizontal"
                   style={{
-                    history: "30px",
+                    marginTop: "5px",
                   }}
                 >
-                  Filters
+                  All ßooks
                 </Divider>
                 <div className="TheBooksCard">
                   <div className="TheBooksCardContent">
+                    <CardShow
+                      Name="the prince"
+                      auther="mycafile"
+                      src="https://www.noor-book.com/publice/covers_cache_webp/2/6/b/8/628dd2af4d6b8931be3c95aedc4e5ed9.png.webp"
+                    />
                     <CardShow />
-                    <CardShow />
-                    <CardShow />
+                    <CardShow Name="Dz" />
                     <CardShow />
                     <CardShow />
                     <CardShow />
@@ -157,8 +200,39 @@ export default function Books() {
               </div>
 
               <div className="BooksMenu">
+                <Divider orientation="horizontal">Categoures</Divider>
                 <div className="BooksMenusCo">
                   <ul>
+                    <li>
+                      {/*icon */}
+                      <img
+                        alt="islamic"
+                        className="ListImge"
+                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
+                      />
+                      {/*Name */}
+                      <p> Islamic</p>
+                    </li>
+                    <li>
+                      {/*icon */}
+                      <img
+                        alt="islamic"
+                        className="ListImge"
+                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
+                      />
+                      {/*Name */}
+                      <p> Islamic</p>
+                    </li>
+                    <li>
+                      {/*icon */}
+                      <img
+                        alt="islamic"
+                        className="ListImge"
+                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
+                      />
+                      {/*Name */}
+                      <p> Islamic</p>
+                    </li>
                     <li>
                       {/*icon */}
                       <img
