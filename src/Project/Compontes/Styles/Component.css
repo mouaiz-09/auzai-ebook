@@ -97,11 +97,15 @@ a {
    
     color: rgba(0, 90, 112, 0.89) !important;
 }
+.Categoures{
+    margin-top:30px ;
+}
 .CategouresC{
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto 1fr;
     column-gap: 50px;
+    
    
    
 }
@@ -145,7 +149,7 @@ a {
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    margin: 20px;
+    
 }
 
 .BooksTop {
@@ -243,6 +247,7 @@ a {
 @media (max-width : 750px){
   .BooksBody{
     flex-direction: column-reverse;
+    padding: 0px;
    
   }
   .FilterOptions{
