@@ -97,7 +97,7 @@ export default function Homer(params) {
             <div className="HTS2">
               {/*----------------Book & Noveles---------- */}
               <div className="Categoures">
-                <div className="Books  Noveles HomeCard">
+               
                   <Container maxWidth="sm" className="CategouresC">
                     <Link
                       className="CardCategoryCover"
@@ -131,7 +131,7 @@ export default function Homer(params) {
                       </Link>
                     </div>
                   </Container>
-                </div>
+              
               </div>
               {/*----------------Book & Noveles---------- */}
             </div>
