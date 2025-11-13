@@ -515,3 +515,130 @@ margin-top: 10px;
 }
 
 /*About-us*/
+/*Show */
+.InformationsShow{
+    background: var(--bg-color-) ;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px ;
+    
+}
+.TheRooteOfBookShow{
+    padding-left: 10px !important;
+}
+.Book{
+    height: 100%;
+    width: 100%;
+   display: grid;
+   grid-template-columns: auto auto auto;
+   grid-template-rows : 2;
+   column-gap: 10px;
+   row-gap: 20px;
+   padding: 10px;
+}
+
+.Cover{
+    grid-row: 1/3;
+    border-radius: 20px ;
+    overflow: hidden;
+    padding: 2px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width:1fr;
+   height: fit-content;
+   padding: 10px;
+   background-color: #c8cfcf;
+   
+}
+.BookCover {
+    max-height  :  400px; 
+    border-radius: 25px !important;
+    
+}
+.Info{
+    grid-column: 2/6;
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-rows:  auto auto;
+    background-color: rgba(207, 205, 202, 0.692);
+}
+.MainInfo{
+    margin-bottom: 30px;
+    color:rgba(29, 28, 28, 0.884)    ;
+    display: flex;
+    justify-content: center;
+    
+}
+.Titel{
+    font-size: xx-large;
+}
+.auther{
+    font-size: smaller;
+}
+.GenralInfo{
+    width: 100%;
+}
+.GenralInfo ul{
+ padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.GenralInfo li{
+    font-size: x-large;
+    font-weight: 700;
+    color:var(--text-color-main);
+}
+
+.GenralInfo .Link{
+background-color: var(--color-text-titel);
+color: white !important;
+padding: 5px;
+border-radius: 5px;
+font-size: medium;
+}
+.DwBtn{
+    background-color: #076d57 !important;
+}
+.Actions{
+    grid-column: 2/4;
+    background-color: #076d57;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+   
+}
+.Sher{
+    flex:1;
+    color: whitesmoke !important;
+}
+.shmedai{
+    flex: 1;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+}
+.ShmedaiBtn{
+    color: whitesmoke !important;
+    transition:  0.5s ease-in-out !important;
+}
+.ShmedaiBtn:hover{
+   transform: rotate(-90deg ) !important;
+}
+
+
+.Help{
+    grid-column: 4/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(221, 3, 3, 0.979);
+    border-radius: 20px;
+}
+

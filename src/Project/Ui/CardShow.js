@@ -6,7 +6,7 @@ export default function CardShow({
   Name = "bookName",
   src = NotFoundLogoBook,
   auther = "mouaiz",
-  LinkShow = `/Show/:${Name}`,
+  LinkShow = `/Show/${Name}`,
 }) {
   return (
     <Link to={LinkShow}>
