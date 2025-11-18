@@ -16,7 +16,6 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 import Divider from "@mui/joy/Divider";
-import { red } from "@mui/material/colors";
 
 /*--------------------------MUI-------------------------------- */
 
@@ -32,30 +31,31 @@ export default function Books() {
   });
 
   const Categoures = [
-    "Islamic",
-    "sciences",
-    "History",
-    "Language",
-    "Human development",
-    "Technology",
+    { Name: "Islamic" },
+    { Name: "sciences" },
+    { Name: "History" },
+    { Name: "Language" },
+    { Name: "Human development" },
+    { Name: "Technology" },
   ];
 
-  const CategouresShow = Categoures.map((C) => {});
+  const CategouresShow = Categoures.map((C) => {
+    return (
+      <li>
+        <img
+          alt="islamic"
+          className="ListImge"
+          src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
+        />
+
+        <p> {C.Name}</p>
+      </li>
+    );
+  });
 
   return (
     <>
-      <AnimatedContent
-        distance={50}
-        direction
-        reverse={true}
-        duration={1.2}
-        ease="bounce.out"
-        initialOpacity={0.2}
-        animateOpacity
-        scale={1.2}
-        threshold={0.2}
-        delay={0}
-      >
+      <>
         <Container maxWidth="lg" className="Books">
           <div className="BooksTop">
             {/*-------------Logo section-------*/}
@@ -199,74 +199,13 @@ export default function Books() {
               <div className="BooksMenu">
                 <Divider orientation="horizontal">Categoures</Divider>
                 <div className="BooksMenusCo">
-                  <ul>
-                    <li>
-                      {/*icon */}
-                      <img
-                        alt="islamic"
-                        className="ListImge"
-                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
-                      />
-                      {/*Name */}
-                      <p> Islamic</p>
-                    </li>
-                    <li>
-                      {/*icon */}
-                      <img
-                        alt="islamic"
-                        className="ListImge"
-                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
-                      />
-                      {/*Name */}
-                      <p> Islamic</p>
-                    </li>
-                    <li>
-                      {/*icon */}
-                      <img
-                        alt="islamic"
-                        className="ListImge"
-                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
-                      />
-                      {/*Name */}
-                      <p> Islamic</p>
-                    </li>
-                    <li>
-                      {/*icon */}
-                      <img
-                        alt="islamic"
-                        className="ListImge"
-                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
-                      />
-                      {/*Name */}
-                      <p> Islamic</p>
-                    </li>
-                    <li>
-                      {/*icon */}
-                      <img
-                        alt="islamic"
-                        className="ListImge"
-                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
-                      />
-                      {/*Name */}
-                      <p> Islamic</p>
-                    </li>
-                    <li>
-                      {/*icon */}
-                      <img
-                        alt="islamic"
-                        className="ListImge"
-                        src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
-                      />
-                      {/*Name */}
-                      <p> Islamic</p>
-                    </li>
-                  </ul>
+                  <ul>{CategouresShow}</ul>
                 </div>
               </div>
             </div>
           </div>
         </Container>
-      </AnimatedContent>
+      </>
     </>
   );
 }

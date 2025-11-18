@@ -10,8 +10,9 @@ import Books from "./Project/Compontes/Books";
 import { Show } from "./Project/Compontes/Show";
 import Noveles from "./Project/Compontes/Novels";
 import Aboutus from "./Project/Compontes/Abou-us";
-import { useEffect } from "react";
+
 /*-------------Compontes------- */
+
 
 function App() {
  
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Noveles" element={<Noveles />} />
           <Route path="/about" element={<Aboutus />} />
           <Route path="/Show/:id" element={<Show />} />
+      
           <Route path="*" element={<Error />}></Route>
         </Routes>
         {/*------------------Routers----------- */}

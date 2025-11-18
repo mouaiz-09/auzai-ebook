@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, Links, useParams } from "react-router-dom";
 import { ButtonGroup, Button, Container, Divider } from "@mui/material";
 import lgoo from "../Photo/CoverNotAvailable.jpg";
 /*--------------------------MUI-------------------------------- */
@@ -8,16 +8,29 @@ import BasicBreadcrumbs from "../Ui/Breadcrumbs";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import PalstenLogo from "../Photo/palestine.gif";
+import Mail from "@mui/icons-material/Mail";
+import Dangerous from "@mui/icons-material/Dangerous";
+
 /*Icons */
 export function Show(params) {
   const { id } = useParams();
+  /*Mail Help */
+  const to = "rlqyyn@gmail.com";
+  const subject = "   كتاب " + id;
+  const body = "السلام عليكم\nاكتب رسالتك هنا";
+
+  const mailto = `mailto:${to}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
+  /*Mail Help */
+
   return (
     <div className="SHowPage">
       {/*عرض الكتاب */}
       <Container maxWidth="lg" className="InformationsShow">
         <div className="TheRooteOfBookShow">
-          <BasicBreadcrumbs  BookName={id}/>
+          <BasicBreadcrumbs BookName={id} />
         </div>
         <div className="Book">
           <div className="Cover">
@@ -59,7 +72,12 @@ export function Show(params) {
                   justifyContent: "center",
                 }}
               >
-                <Button  className="DwBtn" color="success" variant="contained">
+                <Button
+                  fullWidth="80%"
+                  className="DwBtn"
+                  color="success"
+                  variant="contained"
+                >
                   Dawnlod
                 </Button>
               </div>
@@ -92,13 +110,69 @@ export function Show(params) {
             </div>
           </div>
           <div className="Help">
-            <Button color="error"    variant="contained"> Help me!!</Button>
+            <Link to={mailto}>
+              <Button color="error" variant="contained">
+                <Dangerous />
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>
-      {/*عرض الكتاب */}
+      <Container maxWidth="md" className="ShowButtom">
+        <div className="PuBuBtn">
+          <Link to={"/"}>
+            <h3 className="PublishBtn">click here to publish your book!!!</h3>
+          </Link>
+        </div>
 
-     
+        <Divider style={{ margin: "30px" }}> Countact-US</Divider>
+        <div className="DevalopmenFoter">
+          <div>
+            <Link to="https://www.instagram.com/auza.ebook">
+              <InstagramIcon className="C" />
+            </Link>
+          </div>
+          <div>
+            <FacebookOutlinedIcon className="C" />
+          </div>
+          <div>
+            <Link to={mailto}>
+              <Mail className="C" />
+            </Link>
+          </div>
+        </div>
+        <Divider style={{ margin: "30px" }} />
+
+        <div className="ReturenHome">
+          <ButtonGroup
+            className="GroupReturenHome"
+            disableElevation
+            variant="text"
+            aria-label="Disabled button group"
+            style={{ display: "grid" }}
+            color="primary"
+          >
+            <Button className="ShowLinkMain">
+              <Link to="/">
+                <h3>Home</h3>
+              </Link>
+            </Button>
+
+            <Button className="ShowLinkMain">
+              <Link to="/books">
+                <h3>Books</h3>
+              </Link>
+            </Button>
+
+            <Button className="ShowLinkMain">
+              <Link to="/Noveles">
+                <h3>Novoles</h3>
+              </Link>
+            </Button>
+          </ButtonGroup>
+        </div>
+      </Container>
+      {/*عرض الكتاب */}
     </div>
   );
 }

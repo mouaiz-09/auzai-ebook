@@ -17,37 +17,25 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 
-
 /*--------------------------MUI-------------------------------- */
 
 import { ScroolTop } from "../Ui/NavBar";
 
 export default function Homer(params) {
-  document.title="Home |Book_Dz"
+  document.title = "Home |Book_Dz";
   /*-----animation---- */
   const handleAnimationComplete = () => {
     console.log("Animation completed!");
   };
   /*-----animation---- */
   return (
-    <AnimatedContent
-      distance={50}
-      direction
-      reverse={true}
-      duration={1.2}
-      ease="bounce.out"
-      initialOpacity={0.2}
-      animateOpacity
-      scale={1.2}
-      threshold={0.2}
-      delay={0}
-    >
+    <>
       <Container maxWidth="lg">
         <div className="Home" style={{ width: "100%" }}>
           <div className="HomeTop">
             <div className="HTS1">
               {/*-------------Logo section------- */}
-              <div style={{ marginBottom: "40px"  }}>
+              <div style={{ marginBottom: "40px" }}>
                 <img className="MainLogoHome" src={MainLogo} alt="logo "></img>
               </div>
               {/*-------------Logo section------- */}
@@ -96,47 +84,49 @@ export default function Homer(params) {
             <div className="HTS2">
               {/*----------------Book & Noveles---------- */}
               <div className="Categoures">
-               
-                  <Container maxWidth="sm" className="CategouresC">
+                <Container maxWidth="sm" className="CategouresC">
+                  <Link
+                    className="CardCategoryCover"
+                    onClick={ScroolTop}
+                    to={"Books"}
+                  >
+                    <CardVariants Src={BookLogo} Titel={"Books"} />
+                  </Link>
+
+                  <Link
+                    className="CardCategoryCover"
+                    onClick={ScroolTop}
+                    to="Noveles"
+                  >
+                    <CardVariants Src={NovelesLogo} Titel={"Noveles"} />
+                  </Link>
+
+                  <div
+                    className="AboutusHome"
+                    style={{
+                      width: "90%",
+
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginTop: "30px ",
+                    }}
+                  >
                     <Link
-                      className="CardCategoryCover"
+                      className="BtnAboutusHome"
                       onClick={ScroolTop}
-                      to={"Books"}
+                      to={"/about"}
                     >
-                      <CardVariants Src={BookLogo} Titel={"Books"} />
+                      About -us
                     </Link>
-
-                    <Link
-                      className="CardCategoryCover"
-                      onClick={ScroolTop}
-                      to="Noveles"
-                    >
-                      <CardVariants Src={NovelesLogo} Titel={"Noveles"} />
-                    </Link>
-
-                    <div
-                      className="AboutusHome"
-                      style={{
-                        width: "90%",
-
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginTop: "30px ",
-                      }}
-                    >
-                      <Link className="BtnAboutusHome"  onClick={ScroolTop} to={"/about"}>
-                        About -us
-                      </Link>
-                    </div>
-                  </Container>
-              
+                  </div>
+                </Container>
               </div>
               {/*----------------Book & Noveles---------- */}
             </div>
           </div>
         </div>
       </Container>
-    </AnimatedContent>
+    </>
   );
 }
