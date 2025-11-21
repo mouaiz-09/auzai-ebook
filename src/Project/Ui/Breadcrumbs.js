@@ -1,22 +1,25 @@
 import Breadcrumbs from "@mui/joy/Breadcrumbs";
-import Link from "@mui/joy/Link";
+
 import Typography from "@mui/joy/Typography";
+import { Link } from "react-router-dom";
 
 export default function BasicBreadcrumbs({
   breadcrumbs = [
-    { value: "home", link: "/" },
-    { value: "books", link: "/books" },
+    { value: "الصفحة الرئيسة", link: "/" },
+    { value: "الكتب", link: "/books" },
   ],
-  BookName = "bookName",
+  BookName = ["bookName" , "/"],
 }) {
   return (
     <Breadcrumbs aria-label="breadcrumbs">
       {breadcrumbs.map((item) => (
-        <Link key={item} color="neutral" href={item.link}>
+        <Link key={item} color="neutral" to={item.link}>
           {item.value}
         </Link>
       ))}
-      <Typography sx={{ fontWeight: "900" }}>{BookName}</Typography>
+       <Link to={BookName[1]} >
+       <Typography sx={{ fontWeight: "900" }}>{BookName[0]}</Typography>
+       </Link>
     </Breadcrumbs>
   );
 }

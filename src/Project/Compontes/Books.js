@@ -41,7 +41,7 @@ export default function Books() {
   const CategouresShow = Categoures.map((C) => {
     return (
       <li>
-        <img
+        <img    
           alt="islamic"
           className="ListImge"
           src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"

@@ -1,6 +1,7 @@
 import "./Styles/UI.css";
 import NotFoundLogoBook from "../Photo/CoverNotAvailable.jpg";
 import { Link } from "react-router-dom";
+import { ScroolTop } from "../Ui/NavBar";
 
 export default function CardShow({
   Name = "bookName",
@@ -9,7 +10,7 @@ export default function CardShow({
   LinkShow = `/Show/${Name}`,
 }) {
   return (
-    <Link to={LinkShow}>
+    <Link onClick={ScroolTop} to={LinkShow}>
       <div className="CardShow">
         <div className="CardshowContetnt">
           <div className="CardShowImgeCover">

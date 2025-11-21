@@ -1,17 +1,17 @@
-import { Link, Links, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ButtonGroup, Button, Container, Divider } from "@mui/material";
-import lgoo from "../Photo/CoverNotAvailable.jpg";
+import axios from "axios";
+import { ScroolTop } from "../Ui/NavBar";
+import { useEffect, useState } from "react";
+import Dialogs from "../Ui/Dialogs";
 /*--------------------------MUI-------------------------------- */
 import BasicBreadcrumbs from "../Ui/Breadcrumbs";
-/*--------------------------MUI-------------------------------- */
-/*Icons */
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import Mail from "@mui/icons-material/Mail";
 import Dangerous from "@mui/icons-material/Dangerous";
+import ShareRounded from "@mui/icons-material/ShareRounded";
 
-/*Icons */
 export function Show(params) {
   const { id } = useParams();
   /*Mail Help */
@@ -25,45 +25,47 @@ export function Show(params) {
 
   /*Mail Help */
 
+  /*------------------------------------------------ */
+  const [BookData, ChangBookData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://back-end-v1.vercel.app/api/books/68c2e867a00ba6de248dd708")
+      .then((res) => {
+        ChangBookData(res.data);
+
+        console.log("THe fatching done master mouaiz ");
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
+
+  const SHerInfo = {
+    bookTitle: BookData.title,
+    bookUrl: window.location.href,
+    bookText: BookData.description,
+  };
+
+  /*------------------------------------------------ */
+
   return (
     <div className="SHowPage">
       {/*عرض الكتاب */}
       <Container maxWidth="lg" className="InformationsShow">
         <div className="TheRooteOfBookShow">
-          <BasicBreadcrumbs BookName={id} />
+          <BasicBreadcrumbs BookName={[BookData.title]} />
         </div>
         <div className="Book">
           <div className="Cover">
-            <img alt="dz" className="BookCover" src={lgoo} />
+            <img alt="dz" className="BookCover" src={BookData.cover} />
           </div>
           <div className="Info">
             <div className="MainInfo">
-              <h3 className="Titel">{id}</h3>
-              <h5 className="auther">auther</h5>
-            </div>
-            <div className="GenralInfo">
-              <ul>
-                <li>
-                  section:{" "}
-                  <Link className="Link" to={"/"}>
-                    {" "}
-                    Langoueges
-                  </Link>{" "}
-                </li>
-                <li>
-                  Language : <b className="Link"> Arabic</b>{" "}
-                </li>
-                <li>
-                  year : <b className="Link"> 2000</b>
-                </li>
-                <li>
-                  pages :<b className="Link">200</b>{" "}
-                </li>
-              </ul>
+              <h3 className="Titel">{BookData.title}</h3>
+              <h5 className="auther">{BookData.author}</h5>
             </div>
             <div className="DescriptionD">
-              <Divider sx={{ width: "100%" }}>Description </Divider>
-              <h4>00000000000000000000000000000000000000000</h4>
+              <Divider sx={{ width: "100%" }}>وصف الكتاب </Divider>
+              <h4>{BookData.description}</h4>
               <Divider sx={{ width: "100%", margin: "10px 0px " }} />
               <div
                 style={{
@@ -72,104 +74,86 @@ export function Show(params) {
                   justifyContent: "center",
                 }}
               >
-                <Button
-                  fullWidth="80%"
+                <a
                   className="DwBtn"
-                  color="success"
-                  variant="contained"
+                  href={BookData.pdf}
+                  target="_blank"
+                  download={BookData.title}
+                  rel="noopener noreferrer"
                 >
-                  Dawnlod
-                </Button>
+                  تنزيل الكتاب
+                </a>
               </div>
             </div>
           </div>
 
           <div className="Actions">
             <div className="Sher">
-              <p>sher this books :</p>
-            </div>
-            <div className="shmedai">
-              <ButtonGroup
-                disableElevation
-                variant="text"
-                aria-label="Disabled button group"
-                style={{ display: "flex", justifyContent: "space-between" }}
-              >
-                <Button className="ShmedaiBtn">
-                  <InstagramIcon />
-                </Button>
-
-                <Button className="ShmedaiBtn">
-                  <FacebookOutlinedIcon />
-                </Button>
-
-                <Button className="ShmedaiBtn">
-                  <WhatsAppIcon />
-                </Button>
-              </ButtonGroup>
+              <Link className="Link" to={"/serch?q=" + BookData.category}>
+                <b>{BookData.category}</b>
+              </Link>
+              <Link className="Link" to={"/serch?q=" + BookData.author}>
+                <b>{BookData.author}</b>
+              </Link>
             </div>
           </div>
           <div className="Help">
-            <Link to={mailto}>
+            <Link className="HlepBtn" to={mailto}>
               <Button color="error" variant="contained">
                 <Dangerous />
               </Button>
             </Link>
+            <div className="HlepBtn">
+              <Dialogs
+                Dz={SHerInfo}
+                titel={<ShareRounded />}
+                btnName="اغلاق"
+              ></Dialogs>
+            </div>
+
+            <div className="shmedai">
+              <Button className="ShmedaiBtn">
+                <InstagramIcon />
+              </Button>
+
+              <Button className="ShmedaiBtn">
+                <FacebookOutlinedIcon />
+              </Button>
+
+              <Button className="ShmedaiBtn">
+                <WhatsAppIcon />
+              </Button>
+            </div>
           </div>
         </div>
       </Container>
       <Container maxWidth="md" className="ShowButtom">
         <div className="PuBuBtn">
           <Link to={"/"}>
-            <h3 className="PublishBtn">click here to publish your book!!!</h3>
+            <h3 className="PublishBtn">اضغط هنا لنشر كتابك !!</h3>
           </Link>
         </div>
 
-        <Divider style={{ margin: "30px" }}> Countact-US</Divider>
-        <div className="DevalopmenFoter">
-          <div>
-            <Link to="https://www.instagram.com/auza.ebook">
-              <InstagramIcon className="C" />
-            </Link>
-          </div>
-          <div>
-            <FacebookOutlinedIcon className="C" />
-          </div>
-          <div>
-            <Link to={mailto}>
-              <Mail className="C" />
-            </Link>
-          </div>
-        </div>
         <Divider style={{ margin: "30px" }} />
 
         <div className="ReturenHome">
-          <ButtonGroup
-            className="GroupReturenHome"
-            disableElevation
-            variant="text"
-            aria-label="Disabled button group"
-            style={{ display: "grid" }}
-            color="primary"
-          >
-            <Button className="ShowLinkMain">
-              <Link to="/">
-                <h3>Home</h3>
-              </Link>
-            </Button>
+          <Button onClick={ScroolTop} className="ShowLinkMain">
+            <Link onClick={ScroolTop} to="/">
+              <h3>Home</h3>
+            </Link>
+          </Button>
 
-            <Button className="ShowLinkMain">
-              <Link to="/books">
-                <h3>Books</h3>
-              </Link>
-            </Button>
+          <Button onClick={ScroolTop} className="ShowLinkMain">
+            <Link to="/books">
+              <h3>Books</h3>
+            </Link>
+          </Button>
 
-            <Button className="ShowLinkMain">
-              <Link to="/Noveles">
-                <h3>Novoles</h3>
-              </Link>
-            </Button>
-          </ButtonGroup>
+          <Button onClick={ScroolTop} className="ShowLinkMain">
+            <Link to="/Noveles">
+              <h3>Novoles</h3>
+            </Link>
+          </Button>
         </div>
       </Container>
       {/*عرض الكتاب */}

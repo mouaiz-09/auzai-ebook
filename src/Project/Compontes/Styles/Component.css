@@ -478,7 +478,7 @@ color: var(--text-color-main) !important;
 }
 .DevalopmenFoter{
 display: grid;
-grid-template-columns: auto auto auto ;
+grid-template-columns: auto  auto ;
 column-gap: 10px;
 width: 80% !important;
 margin: auto !important;
@@ -516,6 +516,9 @@ margin-top: 10px;
 
 /*About-us*/
 /*Show */
+.SHowPage{
+    direction: rtl !important;
+}
 .InformationsShow{
     background: var(--bg-color-) ;
     border-radius: 20px;
@@ -525,6 +528,7 @@ margin-top: 10px;
 }
 .TheRooteOfBookShow{
     padding-left: 10px !important;
+    direction: rtl !important;
 }
 .Book{
     height: 100%;
@@ -569,6 +573,8 @@ margin-top: 10px;
     color:rgba(29, 28, 28, 0.884)    ;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
 }
 .Titel{
@@ -577,42 +583,27 @@ margin-top: 10px;
 .auther{
     font-size: smaller;
 }
-.GenralInfo{
-    width: 100%;
-}
-.GenralInfo ul{
- padding-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    gap: 10px !important;
-    list-style: none !important;
-}
 
-.GenralInfo li{
-    font-size: x-large;
-    font-weight: 700;
-    color:var(--text-color-main);
-   
-}
 
-.GenralInfo .Link{
+ .Link{
 background-color: var(--color-text-titel);
 color: white !important;
-padding: 5px;
+padding: 5px 10px;
 border-radius: 5px;
 font-size:large;
-margin-left: 10px;
+transition: all 0.5s easein;
 
 }
 .DwBtn{
     background-color: #076d57 !important;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    color: whitesmoke !important;
+    text-align: center;
+    font-weight: 800;
 }
-.GenralInfo .Link:hover{
-    padding: 7px  ;
-    cursor: pointer;
-}
+
 .Actions{
     grid-column: 2/4;
     background-color: #c0bdbc;
@@ -628,9 +619,25 @@ margin-left: 10px;
 .Sher{
     flex:1;
     color: var(--text-color-main) !important;
+    display: flex ;
+    justify-content: stretch;
+    align-items: center;
+    gap: 10px;
 }
+
+
+.Help{
+    grid-column: 4/6;
+    background-color: #c9c7c6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
 .shmedai{
-    flex: 1;
+    
     display: grid;
     grid-template-columns: auto auto auto ;
 }
@@ -639,17 +646,8 @@ margin-left: 10px;
     transition:  0.5s ease-in-out !important;
 }
 .ShmedaiBtn:hover{
-   transform: rotate(-90deg ) !important;
-}
-
-
-.Help{
-    grid-column: 4/6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #c9c7c6;
-    border-radius: 20px;
+    background-color: #0294ad !important;
+   transform: rotate(360deg ) !important;
 }
 /*ShowButtom*/
 .ShowButtom{
@@ -665,6 +663,10 @@ margin-left: 10px;
 /*ReturenHome*/
 .ReturenHome{
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 
 }
 .GroupReturenHome{
