@@ -36,7 +36,6 @@ export function Show() {
         console.log("THe fatching done master mouaiz ");
       })
       .catch((err) => console.log(err.message));
-    document.title += BookData.title;
   }, [id]);
 
   const SHerInfo = {
@@ -46,6 +45,7 @@ export function Show() {
   };
 
   /*------------------------------------------------ */
+  document.title = BookData.title;
 
   return (
     <div className="SHowPage">
