@@ -2,34 +2,29 @@ import "./Styles/Component.css";
 import Selecter from "../Ui/Selecter";
 import CardShow from "../Ui/CardShow";
 import palestine from "../Photo/palestine.gif";
-
+import axios from "axios";
 /*-----animation---- */
 import BlurText from "../Animation/Text/BluerText";
-import AnimatedContent from "../Animation/Componentes/Animated";
 
 /*--------------------------MUI-------------------------------- */
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
-
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 import Divider from "@mui/joy/Divider";
+import { useEffect, useState } from "react";
 
 /*--------------------------MUI-------------------------------- */
 
 export default function Books() {
   document.title = "ßooks Section";
-  console.log(document.images);
 
   const images = document.querySelectorAll("img");
-
-  // Loop through each image and add the attribute
   images.forEach((img) => {
     img.setAttribute("loading", "lazy");
   });
-
   const Categoures = [
     { Name: "Islamic" },
     { Name: "sciences" },
@@ -41,7 +36,7 @@ export default function Books() {
   const CategouresShow = Categoures.map((C) => {
     return (
       <li>
-        <img    
+        <img
           alt="islamic"
           className="ListImge"
           src="https://cdn-icons-png.flaticon.com/128/1051/1051465.png"
@@ -51,6 +46,29 @@ export default function Books() {
       </li>
     );
   });
+
+  /*-------------------api ftech :----------------------------- */
+  const [BooksData, SetBooksData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://back-end-v1.vercel.app/api/books`)
+      .then((res) => {
+        SetBooksData(res.data.data); // <-- المهم هنا
+        console.log("The fetching done master mouaiz");
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
+
+  const BooksShow = BooksData.map((book) => (
+    <CardShow
+      Name={book.title}
+      auther={book.author}
+      key={book._id}
+      src={book.cover}
+      id={book._id}
+    />
+  ));
 
   return (
     <>
@@ -156,36 +174,7 @@ export default function Books() {
                 All ßooks
               </Divider>
               <div className="TheBooksCard">
-                <div className="TheBooksCardContent">
-                  <CardShow
-                    Name="the prince"
-                    auther="mycafile"
-                    src="https://www.noor-book.com/publice/covers_cache_webp/2/6/b/8/628dd2af4d6b8931be3c95aedc4e5ed9.png.webp"
-                  />
-                  <CardShow />
-                  <CardShow Name="Dz" />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                  <CardShow />
-                </div>
+                <div className="TheBooksCardContent">{BooksShow}</div>
               </div>
             </div>
 

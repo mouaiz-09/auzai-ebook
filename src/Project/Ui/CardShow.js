@@ -7,7 +7,8 @@ export default function CardShow({
   Name = "bookName",
   src = NotFoundLogoBook,
   auther = "mouaiz",
-  LinkShow = `/Show/${Name}`,
+  id,
+  LinkShow = `/Show/${id}`,
 }) {
   return (
     <Link onClick={ScroolTop} to={LinkShow}>

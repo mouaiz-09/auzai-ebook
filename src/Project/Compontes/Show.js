@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ButtonGroup, Button, Container, Divider } from "@mui/material";
+import { Button, Container, Divider } from "@mui/material";
 import axios from "axios";
 import { ScroolTop } from "../Ui/NavBar";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Dangerous from "@mui/icons-material/Dangerous";
 import ShareRounded from "@mui/icons-material/ShareRounded";
 
-export function Show(params) {
+export function Show() {
   const { id } = useParams();
   /*Mail Help */
   const to = "rlqyyn@gmail.com";
@@ -30,14 +30,14 @@ export function Show(params) {
 
   useEffect(() => {
     axios
-      .get("https://back-end-v1.vercel.app/api/books/68c2e867a00ba6de248dd708")
+      .get(`https://back-end-v1.vercel.app/api/books/${id}`)
       .then((res) => {
         ChangBookData(res.data);
-
         console.log("THe fatching done master mouaiz ");
       })
       .catch((err) => console.log(err.message));
-  }, []);
+    document.title += BookData.title;
+  }, [id]);
 
   const SHerInfo = {
     bookTitle: BookData.title,
