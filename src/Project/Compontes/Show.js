@@ -10,6 +10,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Dangerous from "@mui/icons-material/Dangerous";
+import DownloadDoneOutlined from "@mui/icons-material/DownloadDoneOutlined";
+
 import ShareRounded from "@mui/icons-material/ShareRounded";
 
 export function Show() {
@@ -76,11 +78,18 @@ export function Show() {
               >
                 <a
                   className="DwBtn"
-                 href={encodeURI(book.pdf)}
+                  href={BookData.pdf}
                   target="_blank"
                   download={BookData.title}
                   rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "2px",
+                  }}
                 >
+                  <DownloadDoneOutlined />
                   تنزيل الكتاب
                 </a>
               </div>
