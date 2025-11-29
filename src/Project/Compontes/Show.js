@@ -80,7 +80,7 @@ export function Show() {
                   className="DwBtn"
                   href={BookData.pdf}
                   target="_blank"
-                  download={BookData.title}
+                  download={BookData.title + ".pdf"}
                   rel="noopener noreferrer"
                   style={{
                     display: "flex",
