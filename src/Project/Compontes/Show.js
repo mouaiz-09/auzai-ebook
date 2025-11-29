@@ -76,7 +76,7 @@ export function Show() {
               >
                 <a
                   className="DwBtn"
-                  href={BookData.pdf}
+                 href={encodeURI(book.pdf)}
                   target="_blank"
                   download={BookData.title}
                   rel="noopener noreferrer"
